@@ -155,3 +155,6 @@ You may type: message <username> <message> to leave an offline message."
 Format: private <target> <your_message>
 ************************************************************
 
+To improve:
+Permanent link between P2P message? 
+Message storage?  FIFO or dict(hash) 
