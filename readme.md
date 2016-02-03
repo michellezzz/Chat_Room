@@ -1,12 +1,8 @@
 # Chat Room
-
------------------------------------------------------
-         |       Computer Networks    |
-         |           Project 1        |
------------------------------------------------------
+##### Computer Networks Project 1
 
 python version: 2.7.6
-*****************************************************
+
 ## Design and structure:
 
 This chat room do all the basic functions mentioned in the lab manual, plus one bonus function, P2P Privacy and Consent.
@@ -49,83 +45,98 @@ Run client: python client.py 192.168.0.102 4119
 Basic Client/Server Model:
 
 ### 1. User authentication
-    Just type in username and password as indicated.
-    Any space after the username or password will be neglected.
-    Wrong format will be checked.
-    After typing three wrong password, the user will be blocked for 30 secs. Even if he/she try to log in by another IP.
+Just type in username and password as indicated.
+Any space after the username or password will be neglected.
+Wrong format will be checked.
+After typing three wrong password, the user will be blocked for 30 secs. Even if he/she try to log in by another IP.
 
 #### Example 1:  Successfully login
-Xingyings-MacBook-Pro:chatroombasic Michelle$ python client.py 192.168.0.102 4119
-Please enter username:
-columbia
-Please enter password:
-116bway
-You have successfully logged in.
+         Xingyings-MacBook-Pro:chatroombasic Michelle$ python client.py 192.168.0.102 4119
+         Please enter username:
+         columbia
+         Please enter password:
+         116bway
+         You have successfully logged in.
 
 #### Example 2:
-Xingyings-MacBook-Pro:chatroombasic Michelle$ python client.py 192.168.0.102 4119
-Please enter username:
-columbia
-Please enter password:
-116bway
-You have successfully logged in.
-logout
-Please enter username:
-colu
-Wrong username.
-Please enter username:
-columbia
-Please enter password:
-11
-Please enter password:
-11
-Please enter password:
-11
-You have entered wrong password three times. You will be blocked for 30 seconds.
-Please enter username:
-columbia
-Please enter password:
-116bway
-You are still blocked, please try again later
-Please enter password:
+         Xingyings-MacBook-Pro:chatroombasic Michelle$ python client.py 192.168.0.102 4119
+         Please enter username:
+         columbia
+         Please enter password:
+         116bway
+         You have successfully logged in.
+         logout
+         Please enter username:
+         colu
+         Wrong username.
+         Please enter username:
+         columbia
+         Please enter password:
+         11
+         Please enter password:
+         11
+         Please enter password:
+         11
+         You have entered wrong password three times. You will be blocked for 30 seconds.
+         Please enter username:
+         columbia
+         Please enter password:
+         116bway
+         You are still blocked, please try again later
+         Please enter password:
 ------------------------------------------------------------
 ### 2. Message exchange
 Format: message <target> <yourmessage>
 
 ####Example:
-@seas: message columbia hi
-@columbia: seas: hi
+         @seas: message columbia hi
+         @columbia: seas: hi
 ------------------------------------------------------------
 ### 3. Multiple clients support
+
 The chat room support multiple clients.
 ------------------------------------------------------------
 ### 4. Heartbeat
+
 It is done automatically. User don't need to send heartbeat manually.
+
 Once the user logout, press Ctrl-C, or force close the chat window. The heartbeat will stop.
 ------------------------------------------------------------
 ### 5. Blacklist
-Format: block <target>    unblock<target>
+Format: block \<target\>    unblock\<target\>
+
 If you try to block yourself, or try to unblock someone not in your blacklist, the server will send message to you.
+
 If A has blocked B, B can't send message to A. Also, B can't getaddress A.
 ------------------------------------------------------------
 ### 6. Offline messaging
+
 Offline messaging supported.
 ------------------------------------------------------------
 ### 7. Broadcast
+
 Format: broadcast <your_message>
+
 Broadcast will display the message on everyone online, as long as he/she doesn't block you.
+
 The message will not be displayed in your own window.
 ------------------------------------------------------------
 ### 8. Display current users
+
 Format: online
 ------------------------------------------------------------
 ### 9. Logout
+
 Format: logout
+
 Your account will be logged out. But the client is not closed.
+
 You can go on and login again.
 ------------------------------------------------------------
 ### 10. Graceful exit using control + c
+
 Format: control + c
+
 Your client will be closed. It is different from logout.
 ------------------------------------------------------------
 
@@ -135,26 +146,26 @@ Basic P2P Model
 Format: getaddress <target>
 
 #### Example:
-If seas want to get columbia's address.
-@seas: getaddress columbia
-request sent
-
-@columbia: Do_you_agree to have a private talk with seas? Y seas/N seas
-Y seas
-
-@seas: got address!
-columbia 192.168.0.102 59316
+         If seas want to get columbia's address.
+         @seas: getaddress columbia
+         request sent
+         
+         @columbia: Do_you_agree to have a private talk with seas? Y seas/N seas
+         Y seas
+         
+         @seas: got address!
+         columbia 192.168.0.102 59316
 ------------------------------------------------------------
 ## 2. Offline report
 Yes, the chat room do offline report.
 
 #### Example:
-"facebook is not online. Can't get the address."
-"Connect failed. Maybe the user's ip has changed.
-You may type: message <username> <message> to leave an offline message."
+         "facebook is not online. Can't get the address."
+         "Connect failed. Maybe the user's ip has changed.
+You may type: message \<username\> \<message\> to leave an offline message."
 ------------------------------------------------------------
 ## 3. P2P message exchange
-Format: private <target> <your_message>
+Format: private \<target\> \<your_message\>
 ************************************************************
 
 To improve:
