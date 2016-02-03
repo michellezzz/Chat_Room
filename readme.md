@@ -95,12 +95,14 @@ Format: message <target> <yourmessage>
 ### 3. Multiple clients support
 
 The chat room support multiple clients.
+
 ------------------------------------------------------------
 ### 4. Heartbeat
 
 It is done automatically. User don't need to send heartbeat manually.
 
 Once the user logout, press Ctrl-C, or force close the chat window. The heartbeat will stop.
+
 ------------------------------------------------------------
 ### 5. Blacklist
 Format: block \<target\>    unblock\<target\>
@@ -108,7 +110,7 @@ Format: block \<target\>    unblock\<target\>
 If you try to block yourself, or try to unblock someone not in your blacklist, the server will send message to you.
 
 If A has blocked B, B can't send message to A. Also, B can't getaddress A.
-------------------------------------------------------------
+
 ### 6. Offline messaging
 
 Offline messaging supported.
