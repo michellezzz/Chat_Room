@@ -125,10 +125,8 @@ You can go on and login again.
 10. Graceful exit using control + c
 Format: control + c
 Your client will be closed. It is different from logout.
-
 ------------------------------------------------------------
-------------------------------------------------------------
-Basic P2P Model 20
+11. Basic P2P Model 
 1. Obtain online user’s IP address
 Format: getaddress <target>
 
@@ -143,7 +141,7 @@ Y seas
 @seas: got address!
 columbia 192.168.0.102 59316
 ------------------------------------------------------------
-2. Offline report
+12. Offline report
 Yes, the chat room do offline report.
 
 Example:
@@ -151,7 +149,7 @@ Example:
 "Connect failed. Maybe the user's ip has changed.
 You may type: message <username> <message> to leave an offline message."
 ------------------------------------------------------------
-3. P2P message exchange
+13. P2P message exchange
 Format: private <target> <your_message>
 ************************************************************
 
