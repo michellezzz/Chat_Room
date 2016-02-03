@@ -28,7 +28,6 @@ The data I used is all in data.py.
 
 "block_list" stores black list. It is a dict. Key is username, item is a list of his/her block target.
 
-****************************************************
 ## How to run:
 Does not require makefile.
 Run in terminal, under the project directory. With the credential.txt!
@@ -39,7 +38,6 @@ Run client: python client.py <server_ip> <server_port>
 Run server: python server.py 4119
 Run client: python client.py 192.168.0.102 4119
 
-****************************************************
 ## How to use:
 
 Basic Client/Server Model:
@@ -84,26 +82,24 @@ After typing three wrong password, the user will be blocked for 30 secs. Even if
          116bway
          You are still blocked, please try again later
          Please enter password:
-------------------------------------------------------------
+
 ### 2. Message exchange
 Format: message <target> <yourmessage>
 
 ####Example:
          @seas: message columbia hi
          @columbia: seas: hi
-------------------------------------------------------------
+
 ### 3. Multiple clients support
 
 The chat room support multiple clients.
 
-------------------------------------------------------------
 ### 4. Heartbeat
 
 It is done automatically. User don't need to send heartbeat manually.
 
 Once the user logout, press Ctrl-C, or force close the chat window. The heartbeat will stop.
 
-------------------------------------------------------------
 ### 5. Blacklist
 Format: block \<target\>    unblock\<target\>
 
@@ -114,7 +110,7 @@ If A has blocked B, B can't send message to A. Also, B can't getaddress A.
 ### 6. Offline messaging
 
 Offline messaging supported.
-------------------------------------------------------------
+
 ### 7. Broadcast
 
 Format: broadcast <your_message>
@@ -122,11 +118,11 @@ Format: broadcast <your_message>
 Broadcast will display the message on everyone online, as long as he/she doesn't block you.
 
 The message will not be displayed in your own window.
-------------------------------------------------------------
+
 ### 8. Display current users
 
 Format: online
-------------------------------------------------------------
+
 ### 9. Logout
 
 Format: logout
@@ -134,13 +130,12 @@ Format: logout
 Your account will be logged out. But the client is not closed.
 
 You can go on and login again.
-------------------------------------------------------------
+
 ### 10. Graceful exit using control + c
 
 Format: control + c
 
 Your client will be closed. It is different from logout.
-------------------------------------------------------------
 
 Basic P2P Model 
 
@@ -157,7 +152,7 @@ Format: getaddress <target>
          
          @seas: got address!
          columbia 192.168.0.102 59316
-------------------------------------------------------------
+
 ## 2. Offline report
 Yes, the chat room do offline report.
 
@@ -165,11 +160,11 @@ Yes, the chat room do offline report.
          "facebook is not online. Can't get the address."
          "Connect failed. Maybe the user's ip has changed.
 You may type: message \<username\> \<message\> to leave an offline message."
-------------------------------------------------------------
+
 ## 3. P2P message exchange
 Format: private \<target\> \<your_message\>
-************************************************************
 
-To improve:
+
+#####To improve:
 Permanent link between P2P message? 
 Message storage?  FIFO or dict(hash) 
