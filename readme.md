@@ -1,13 +1,13 @@
-Name: Xingying Liu
-UNI: xl2493
+# Chat Room
 
 -----------------------------------------------------
          |       Computer Networks    |
          |           Project 1        |
 -----------------------------------------------------
+
 python version: 2.7.6
 *****************************************************
-Design and structure:
+## Design and structure:
 
 This chat room do all the basic functions mentioned in the lab manual, plus one bonus function, P2P Privacy and Consent.
 I didn't manage to do the client GUI and Guaranteed Message Delivery in bonus part.
@@ -33,26 +33,28 @@ The data I used is all in data.py.
 "block_list" stores black list. It is a dict. Key is username, item is a list of his/her block target.
 
 ****************************************************
-How to run:
+## How to run:
 Does not require makefile.
 Run in terminal, under the project directory. With the credential.txt!
 Run server: python server.py <server_port>
 Run client: python client.py <server_ip> <server_port>
 
-Example:
+#### Example:
 Run server: python server.py 4119
 Run client: python client.py 192.168.0.102 4119
 
 ****************************************************
-How to use:
+## How to use:
+
 Basic Client/Server Model:
-1. User authentication
+
+### 1. User authentication
     Just type in username and password as indicated.
     Any space after the username or password will be neglected.
     Wrong format will be checked.
     After typing three wrong password, the user will be blocked for 30 secs. Even if he/she try to log in by another IP.
 
-Example 1:  Successfully login
+#### Example 1:  Successfully login
 Xingyings-MacBook-Pro:chatroombasic Michelle$ python client.py 192.168.0.102 4119
 Please enter username:
 columbia
@@ -60,7 +62,7 @@ Please enter password:
 116bway
 You have successfully logged in.
 
-Example 2:
+#### Example 2:
 Xingyings-MacBook-Pro:chatroombasic Michelle$ python client.py 192.168.0.102 4119
 Please enter username:
 columbia
@@ -87,50 +89,52 @@ Please enter password:
 You are still blocked, please try again later
 Please enter password:
 ------------------------------------------------------------
-2. Message exchange
+### 2. Message exchange
 Format: message <target> <yourmessage>
 
-Example:
+####Example:
 @seas: message columbia hi
 @columbia: seas: hi
 ------------------------------------------------------------
-3. Multiple clients support
+### 3. Multiple clients support
 The chat room support multiple clients.
 ------------------------------------------------------------
-4. Heartbeat
+### 4. Heartbeat
 It is done automatically. User don't need to send heartbeat manually.
 Once the user logout, press Ctrl-C, or force close the chat window. The heartbeat will stop.
 ------------------------------------------------------------
-5. Blacklist
+### 5. Blacklist
 Format: block <target>    unblock<target>
 If you try to block yourself, or try to unblock someone not in your blacklist, the server will send message to you.
 If A has blocked B, B can't send message to A. Also, B can't getaddress A.
 ------------------------------------------------------------
-6. Offline messaging
+### 6. Offline messaging
 Offline messaging supported.
 ------------------------------------------------------------
-7. Broadcast
+### 7. Broadcast
 Format: broadcast <your_message>
 Broadcast will display the message on everyone online, as long as he/she doesn't block you.
 The message will not be displayed in your own window.
 ------------------------------------------------------------
-8. Display current users
+### 8. Display current users
 Format: online
 ------------------------------------------------------------
-9. Logout
+### 9. Logout
 Format: logout
 Your account will be logged out. But the client is not closed.
 You can go on and login again.
 ------------------------------------------------------------
-10. Graceful exit using control + c
+### 10. Graceful exit using control + c
 Format: control + c
 Your client will be closed. It is different from logout.
 ------------------------------------------------------------
-11. Basic P2P Model 
-1. Obtain online user’s IP address
+
+Basic P2P Model 
+
+### 1. Obtain online user’s IP address
 Format: getaddress <target>
 
-Example:
+#### Example:
 If seas want to get columbia's address.
 @seas: getaddress columbia
 request sent
@@ -141,15 +145,15 @@ Y seas
 @seas: got address!
 columbia 192.168.0.102 59316
 ------------------------------------------------------------
-12. Offline report
+## 2. Offline report
 Yes, the chat room do offline report.
 
-Example:
+#### Example:
 "facebook is not online. Can't get the address."
 "Connect failed. Maybe the user's ip has changed.
 You may type: message <username> <message> to leave an offline message."
 ------------------------------------------------------------
-13. P2P message exchange
+## 3. P2P message exchange
 Format: private <target> <your_message>
 ************************************************************
 
